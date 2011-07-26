@@ -48,7 +48,7 @@
 O/C mapper (Object to Cloud). Leverage Windows Azure without getting dragged down by low level technicalities.
     </div>
 <p>
-June 23rd, 2010, <a href="http://blog.lokad.com/journal/2010/6/23/honored-by-the-windows-azure-partner-award-of-2010.html"> Lokad is honored </a>by the *Windows Azure Partner Award* of 2010 for Lokad.Cloud.
+June 23rd, 2010, <a href="http://blog.lokad.com/journal/2010/6/23/honored-by-the-windows-azure-partner-award-of-2010.html"> Lokad is honored </a>by the <strong>Windows Azure Partner Award</strong> of 2010 for Lokad.Cloud.
 
 </p>
 <a href="http://blog.lokad.com/journal/2010/6/23/honored-by-the-windows-azure-partner-award-of-2010.html"><img stc="http://lokad-cloud.googlecode.com/svn/wiki/images/WPC10_WebBnnr_Static_Win.jpg"></a>
@@ -70,8 +70,8 @@ foreach(var name in storage.List(CustomerBlobName.Prefix(country))
 </pre>
 
 <em>Scalable services with implicit queue processing:</em>
-[QueueServiceSettings(AutoStart = true, QueueName = "ping")]
 <pre>
+[QueueServiceSettings(AutoStart = true, QueueName = "ping")]
 public class PingPongService : QueueService<double>
 {
   protected override void Start(double x)
