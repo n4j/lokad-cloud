@@ -47,6 +47,43 @@
     <div class="description">
 O/C mapper (Object to Cloud). Leverage Windows Azure without getting dragged down by low level technicalities.
     </div>
+<p>
+June 23rd, 2010, <a href="http://blog.lokad.com/journal/2010/6/23/honored-by-the-windows-azure-partner-award-of-2010.html"> Lokad is honored </a>by the *Windows Azure Partner Award* of 2010 for Lokad.Cloud.
+
+</p>
+<a href="http://blog.lokad.com/journal/2010/6/23/honored-by-the-windows-azure-partner-award-of-2010.html"><img stc="http://lokad-cloud.googlecode.com/svn/wiki/images/WPC10_WebBnnr_Static_Win.jpg"></a>
+
+<p>
+<em>Strong typed put/get on the blob storage:</em>
+<pre>
+IBlobStorageProvider storage = ... ; // init snipped
+CustomerBlobName name = ... ; // init snipped
+var customer = storage.GetBlob(name); // strong type retrieved
+</pre>
+<em>Strong typed enumeration of the blob storage:</em>
+<pre>
+foreach(var name in storage.List(CustomerBlobName.Prefix(country))
+{
+  var customer = storage.GetBlob(name); // strong type, no cast!
+  // do something with 'customer', snipped
+}
+</pre>
+
+<em>Scalable services with implicit queue processing:</em>
+[QueueServiceSettings(AutoStart = true, QueueName = "ping")]
+<pre>
+public class PingPongService : QueueService<double>
+{
+  protected override void Start(double x)
+  {
+    var y = x * x; // 'x' has been retrieved from queue 'ping'
+    Put(y, "pong"); // 'y' has been put in queue named 'pong'
+  }
+}
+</pre>
+</p>
+
+
     <h2>Download Lokad.Cloud</h2>
     <ul>
 	    <li><a href="https://github.com/downloads/Lokad/lokad-cqrs/Lokad.CQRS-v2.0.pdf">PDF Documentation</a></li>
