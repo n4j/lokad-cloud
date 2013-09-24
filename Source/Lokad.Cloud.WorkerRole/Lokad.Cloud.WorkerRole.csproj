@@ -60,48 +60,72 @@
     <Reference Include="Autofac, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Autofac.Configuration, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.Configuration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Lokad.Cloud.Provisioning, Version=2.2.0.7, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Lokad.Cloud.Provisioning.2.2.0\lib\Lokad.Cloud.Provisioning.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Lokad.Cloud.Storage, Version=2.7.0.20, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Lokad.Cloud.Storage.2.7.0\lib\Lokad.Cloud.Storage.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Net.Http, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\HttpClient.0.3.0\lib\40\Microsoft.Net.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <Private>False</Private>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Resource\Library\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\WindowsAzure.Storage.2.1.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Services.Client">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
@@ -117,6 +141,7 @@
     <ProjectReference Include="..\Lokad.Cloud.Framework\Lokad.Cloud.Framework.csproj">
       <Project>{BA84F8E7-F8B9-4912-BF93-9F4D0DDC5C29}</Project>
       <Name>Lokad.Cloud.Framework</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

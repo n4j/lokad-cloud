@@ -3,3 +3,4 @@ _ReSharper*
 *.suo
 Thumbs.db
 .hg
+csx
