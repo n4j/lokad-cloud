@@ -185,6 +185,7 @@ namespace Lokad.Cloud.ServiceFabric.Runtime
 
             // Look for all cloud services currently loaded in the AppDomain
             var serviceTypes = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(a => !a.IsDynamic)
                 .Select(a => a.GetExportedTypes()).SelectMany(x => x)
                 .Where(t => t.IsSubclassOf(typeof (CloudService)) && !t.IsAbstract && !t.IsGenericType)
                 .ToList();
