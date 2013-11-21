@@ -6,6 +6,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Remoting;
 using System.Security;
 using System.Threading;
 using Autofac;
@@ -73,7 +74,14 @@ namespace Lokad.Cloud.ServiceFabric.Runtime
             var instance = _isolatedInstance;
             if (null != instance)
             {
-                _isolatedInstance.Stop();
+                try
+                {
+                    instance.Stop();
+                }
+                catch (RemotingException)
+                {
+                    // already separated, don't care
+                }
             }
         }
     }
