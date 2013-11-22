@@ -12,8 +12,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>XML configuration support for Autofac</description>
     <summary>Enables Autofac dependencies to be configured using XML configuration files.</summary>
-    <releaseNotes />
-    <copyright />
     <language>en-US</language>
     <dependencies>
       <dependency id="Autofac" version="3.1.0" />
