@@ -70,9 +70,9 @@
       <HintPath>..\..\packages\Lokad.Cloud.Provisioning.2.2.0\lib\Lokad.Cloud.Provisioning.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Lokad.Cloud.Storage, Version=2.8.1.24, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Lokad.Cloud.Storage, Version=2.9.1.26, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Lokad.Cloud.Storage.2.8.1\lib\Lokad.Cloud.Storage.dll</HintPath>
+      <HintPath>..\..\packages\Lokad.Cloud.Storage.2.9.1\lib\Lokad.Cloud.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

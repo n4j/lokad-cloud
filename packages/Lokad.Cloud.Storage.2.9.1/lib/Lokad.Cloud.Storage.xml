@@ -444,6 +444,9 @@
         <member name="M:Lokad.Cloud.Storage.Azure.BlobStorageProvider.PutBlobAsync(System.String,System.String,System.Object,System.Type,System.Boolean,System.String,System.Threading.CancellationToken,Lokad.Cloud.Storage.IDataSerializer)">
             <returns>Task with the resulting ETag (or null if not written).</returns>
         </member>
+        <member name="M:Lokad.Cloud.Storage.Azure.BlobStorageProvider.PutBlobStreamAsync(System.String,System.String,System.IO.Stream,System.Boolean,System.String,System.Threading.CancellationToken)">
+            <returns>Task with the resulting ETag (or null if not written).</returns>
+        </member>
         <member name="M:Lokad.Cloud.Storage.Azure.BlobStorageProvider.UploadBlobContent(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob,System.IO.Stream,System.Boolean,System.String)">
             <param name="blob"></param>
             <param name="stream"></param>
@@ -1247,6 +1250,9 @@
         <member name="M:Lokad.Cloud.Storage.BlobStorageExtensions.PutBlob``1(Lokad.Cloud.Storage.IBlobStorageProvider,Lokad.Cloud.Storage.IBlobLocationAndType{``0},``0,System.String,Lokad.Cloud.Storage.IDataSerializer)">
             <summary>Push the blob only if etag is matching the etag of the blob in BlobStorage</summary>
         </member>
+        <member name="M:Lokad.Cloud.Storage.BlobStorageExtensions.PutBlobStream(Lokad.Cloud.Storage.IBlobStorageProvider,Lokad.Cloud.Storage.IBlobLocationAndType{System.IO.Stream},System.IO.Stream,System.String)">
+            <summary>Push the blob only if etag is matching the etag of the blob in BlobStorage</summary>
+        </member>
         <member name="M:Lokad.Cloud.Storage.BlobStorageExtensions.UpdateBlobIfExist``1(Lokad.Cloud.Storage.IBlobStorageProvider,Lokad.Cloud.Storage.IBlobLocationAndType{``0},System.Func{``0,``0},Lokad.Cloud.Storage.IDataSerializer)">
             <summary>
             Updates a blob if it already exists.
@@ -1881,97 +1887,7 @@
         <member name="F:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider._syncRoot">
             <summary>naive global lock to make methods thread-safe.</summary>
         </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.#ctor(Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.ListContainers(System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.CreateContainerIfNotExist(System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.DeleteContainerIfExist(System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.ListBlobNames(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.ListBlobs``1(System.String,System.String,System.Int32,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.DeleteBlobIfExist(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.DeleteAllBlobs(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlob``1(System.String,System.String,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlob``1(System.String,System.String,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlob(System.String,System.String,System.Type,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlobXml(System.String,System.String,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
         <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlobRange``1(System.String,System.String[],System.String[]@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlobIfModified``1(System.String,System.String,System.String,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.GetBlobEtag(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob``1(System.String,System.String,``0,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob``1(System.String,System.String,``0,System.Boolean,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob``1(System.String,System.String,``0,System.Boolean,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob``1(System.String,System.String,``0,System.String,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob(System.String,System.String,System.Object,System.Type,System.Boolean,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.PutBlob(System.String,System.String,System.Object,System.Type,System.Boolean,System.String,System.String@,Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpdateBlobIfExist``1(System.String,System.String,System.Func{``0,``0},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpdateBlobIfExistOrSkip``1(System.String,System.String,System.Func{``0,Lokad.Cloud.Storage.Maybe{``0}},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpdateBlobIfExistOrDelete``1(System.String,System.String,System.Func{``0,Lokad.Cloud.Storage.Maybe{``0}},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpsertBlob``1(System.String,System.String,System.Func{``0},System.Func{``0,``0},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpsertBlobOrSkip``1(System.String,System.String,System.Func{Lokad.Cloud.Storage.Maybe{``0}},System.Func{``0,Lokad.Cloud.Storage.Maybe{``0}},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.UpsertBlobOrDelete``1(System.String,System.String,System.Func{Lokad.Cloud.Storage.Maybe{``0}},System.Func{``0,Lokad.Cloud.Storage.Maybe{``0}},Lokad.Cloud.Storage.IDataSerializer)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.IsBlobLocked(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.TryAcquireLease(System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.TryReleaseLease(System.String,System.String,System.String)">
-            <remarks></remarks>
-        </member>
-        <member name="M:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.TryRenewLease(System.String,System.String,System.String)">
             <remarks></remarks>
         </member>
         <member name="P:Lokad.Cloud.Storage.InMemory.MemoryBlobStorageProvider.Containers">
@@ -2320,6 +2236,11 @@
             <param name="converter">The converter.</param>
             <param name="defaultValue">The default value.</param>
             <returns>value</returns>
+        </member>
+        <member name="M:Lokad.Cloud.Storage.Maybe`1.Bind``1(System.Func{`0,Lokad.Cloud.Storage.Maybe{``0}})">
+            <summary>
+            Binds a function to this <see cref="T:Lokad.Cloud.Storage.Maybe`1"/> instance.
+            </summary>
         </member>
         <member name="M:Lokad.Cloud.Storage.Maybe`1.Equals(Lokad.Cloud.Storage.Maybe{`0})">
             <summary>
