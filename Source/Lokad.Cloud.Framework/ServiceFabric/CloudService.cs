@@ -185,6 +185,11 @@ namespace Lokad.Cloud.ServiceFabric
             return WaitFor<ServiceExecutionFeedback>.Run(ExecutionTimeout, StartImpl);
         }
 
+        public ServiceExecutionFeedback ForceStart()
+        {
+            return WaitFor<ServiceExecutionFeedback>.Run(ExecutionTimeout, StartImpl);
+        }
+
         /// <summary>
         /// Called when the service is launched.
         /// </summary>
