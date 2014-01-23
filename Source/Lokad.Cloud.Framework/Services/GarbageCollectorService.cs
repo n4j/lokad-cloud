@@ -20,7 +20,9 @@ namespace Lokad.Cloud.Services
     [ScheduledServiceSettings(
         AutoStart = true, 
         Description = "Garbage collects temporary items.",
-        TriggerInterval = 60)] // 1 execution every 1min
+        TriggerInterval = 60,
+        ProcessingTimeoutSeconds = 1200,
+        SchedulePerWorker = false)]
     public class GarbageCollectorService : ScheduledService
     {
         static TimeSpan MaxExecutionTime { get { return TimeSpan.FromMinutes(10); } }

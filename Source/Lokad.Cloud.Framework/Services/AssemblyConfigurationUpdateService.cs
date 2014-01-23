@@ -14,9 +14,9 @@ namespace Lokad.Cloud.Services
     /// </summary>
     [ScheduledServiceSettings(
            AutoStart = true,
-           TriggerInterval = 60, // 1 execution every 1 minute
            Description = "Checks for and applies assembly and configuration updates.",
-           ProcessingTimeoutSeconds = 5 * 60, // timeout after 5 minutes
+           TriggerInterval = 60, // 1 execution every 1 minute
+           ProcessingTimeoutSeconds = 300, // timeout after 5 minutes
            SchedulePerWorker = true)]
     public class AssemblyConfigurationUpdateService : ScheduledService
     {

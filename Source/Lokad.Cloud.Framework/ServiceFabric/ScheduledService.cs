@@ -86,7 +86,7 @@ namespace Lokad.Cloud.ServiceFabric
         protected ScheduledService()
         {
             // runtime fixed settings
-            _leaseTimeout = ExecutionTimeout + TimeSpan.FromMinutes(5);
+            _leaseTimeout = ExecutionTimeout + TimeSpan.FromMinutes(2);
 
             // default setting
             _scheduledPerWorker = false;

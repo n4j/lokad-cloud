@@ -15,7 +15,9 @@ namespace Lokad.Cloud.Services
     [ScheduledServiceSettings(
         AutoStart = true,
         Description = "Checks for dead and expired delayed messages to be put in regular queue.",
-        TriggerInterval = 15)] // 15s
+        TriggerInterval = 15,
+        ProcessingTimeoutSeconds = 300,
+        SchedulePerWorker = false)]
     public class ReviveMessagesService : ScheduledService
     {
         protected override void StartOnSchedule()
